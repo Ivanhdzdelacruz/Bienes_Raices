@@ -1,0 +1,20 @@
+<% @properties.each do |p| %>
+<div class="col-lg-6 property">
+  <div class="row">
+    <div class="col-lg-6"><%= image_tag p.photo.url, class: 'img-thumbnail img-responsive' %></div>
+    <div class="col-lg-6">
+    <h4><strong><%= p.name %></strong></h4>
+    <div class="tipo">
+      <small><%= p.property_type.name %> en <strong> <%= p.property_category.name %></strong></small>
+    </div>
+    <p class="text-danger"><b><%= number_to_currency(p.price) %> </b><%= '/ mes' if p.property_category.name == 'Alquiler' %></p>
+     <div class="features">
+       <small>Habitaciones: <span class="badge"><%= p.rooms %></span> </small>
+       <small>Baños: <span class="badge"><%= p.bathromms %></span> </small><br>
+       <small>Parqueos: <span class="badge"><%= p.parking %></span> </small><br>
+     </div>
+      <%= link_to 'Ver Propiedad', public_properties_show_path(p), class: 'btn btn-primary' %>
+   </div>
+  </div>
+</div>
+<% end %>

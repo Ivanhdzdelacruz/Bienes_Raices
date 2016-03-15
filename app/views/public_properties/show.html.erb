@@ -1,0 +1,56 @@
+<h1><strong><%= @property.name %></strong> <small>/ <%= @property.property_type.name %></small><p class="text-danger"><strong><%= number_to_currency(@property.price) %> <%= '/ mes' if @property.property_category.name == 'Alquiler'  %></strong></p></h1>
+
+<hr/>
+<div class="row">
+  <div class="col-lg-8">
+    <%= image_tag @property.photo.url, class: 'img-responsive img-thumbnail' %>
+  </div>
+  <div class="col-lg-4">
+    <% @property.property_photos.each do |p| %>
+        <%= link_to p.source.url, class: 'fancybox', rel: 'gallery1', title: p.caption do %>
+            <%= image_tag p.source.url, class: 'img-thumbnail', width: 110 %>
+        <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="clearfix"></div>
+<div class="features">
+  <h3>Caracteristicas</h3>
+  <hr/>
+  <div class="row">
+    <div class="col-lg-6">
+      <p>Habitaciones: <span class="badge"><%= @property.rooms %></span></p>
+      <p>Baños: <span class="badge"><%= @property.bathromms %></span></p>
+      <p>MTS2 Construcción: <span class="badge"><%= @property.construction %></span></p>
+      <p>MTS2 Terreno: <span class="badge"><%= @property.ground %></span></p>
+    </div>
+    <div class="col-lg-6">
+      <p>Tipo: <span class="label label-success"><%= @property.property_type.name %></span></p>
+      <p>Categoría: <span class="label label-warning"><%= @property.property_category.name %></span></p>
+      <p>Ciudad: <strong><%= @property.city.name %></strong></p>
+    </div>
+  </div>
+</div>
+<div class="description">
+  <h3>Descripcion</h3>
+  <hr/>
+  <%== @property.description %>
+</div>
+
+<h3>Agente</h3>
+<div class="well">
+  <div class="media">
+    <div class="pull-left col-lg-3">
+      <%= image_tag @property.agent.photo.url, class: 'img-responsive img-thumbnail' %>
+    </div>
+    <div class="pull-left col-lg-8">
+      <h4><%= @property.agent.name %></h4>
+      <p><%= @property.agent.about %></p>
+      <p>Dirección: <strong><%= @property.agent.address %></strong></p>
+      <p>Teléfono: <strong><%= @property.agent.phone %></strong> / Email: <strong><a href="mailto:mail"><%= @property.agent.email %></a></strong></p>
+    </div>
+  </div>
+
+
+
+</div>

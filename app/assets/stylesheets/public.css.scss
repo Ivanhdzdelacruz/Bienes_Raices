@@ -1,0 +1,91 @@
+body.tucasa{
+  font-family: arial, sans-serif;
+
+  a:hover{
+    background-color: none;
+  }
+
+  a.btn-primary{
+    color: #ffffff;
+  }
+
+  .alert.fixed, .notice.fixed{
+    position: absolute;
+    top: 20px;
+  }
+
+  #header{
+    padding: 10px 0;
+
+    .phone{
+      font-size: 24px;
+      font-family: Georgia, Helvetica, Arial, sans-serif;
+      color: #148951;
+      margin-top: 20px;
+    }
+  }
+
+  #menu{
+    background: #003a70;
+    margin-bottom: 0;
+    border-bottom: 0;
+    color: #ffffff;
+
+    li a{
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+    #greetings{
+      margin-top: 10px;
+    }
+  }
+
+
+
+  #slider{
+    min-height: 380px;
+    background: url("bgslider.jpg") repeat #148951;
+    color: #ffffff;
+    padding: 30px;
+
+    p{
+      font-size: 18px;
+      line-height: 1.4;
+    }
+  }
+
+  .sidebar{
+    margin-top: 20px;
+
+    li{
+      margin-bottom: 10px;
+
+    }
+  }
+
+  //Properties
+  .property{
+    margin-top: 20px;
+    height: 170px;
+
+    h4{
+      margin: 0;
+    }
+
+    .features{
+      margin-bottom: 5px;
+    }
+
+    .tipo small{
+      font-size: 12px;
+      color: dimgray;
+    }
+
+    .text-danger{ padding-top: 5px;}
+
+  }
+
+
+
+
+} //FIN body.tucasa

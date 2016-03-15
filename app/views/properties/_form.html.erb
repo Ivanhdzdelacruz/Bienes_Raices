@@ -1,0 +1,124 @@
+<%= form_for @property, :html => { :class => "form-horizontal property" } do |f| %>
+
+  <% if @property.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@property.errors.count, "error") %> prohibited this property from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @property.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label 'Nombre', :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:name) %>
+  </div>
+
+    <div class="form-group">
+      <%= f.label 'Foto Principal', :class => 'control-label col-lg-2' %>
+      <br/>
+      <% if action_name == 'edit' %>
+          <%= image_tag @property.photo.url, width: '150', class: 'img-thumbnail' if @property.photo?  %>
+          <% end %>
+      <div class="col-lg-10">
+        <%= f.file_field :photo, accept: 'image/*'  %>
+      </div>
+      <%=f.error_span(:photo) %>
+    </div>
+
+  <div class="form-group">
+    <%= f.label 'Descripción', :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_area :description, :class => 'form-control ckeditor' %>
+    </div>
+    <%=f.error_span(:description) %>
+  </div>
+  <div class="form-group">
+    <%= f.label 'Habitaciones', :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :rooms, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:rooms) %>
+  </div>
+  <div class="form-group">
+    <%= f.label 'Baños', :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :bathromms, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:bathromms) %>
+  </div>
+  <div class="form-group">
+    <%= f.label 'Mts2 construccion', :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :construction, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:construction) %>
+  </div>
+  <div class="form-group">
+    <%= f.label 'Mts2 Terreno', :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :ground, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:ground) %>
+  </div>
+  <div class="form-group">
+    <%= f.label 'Estacionamiento', :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :parking, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:parking) %>
+  </div>
+  <div class="form-group">
+    <%= f.label 'Precio', :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :price, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:price) %>
+  </div>
+  <div class="form-group">
+    <%= f.label 'Agente', :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select :agent_id, set_agents.collect {|c| [c.name, c.id]}, {}, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:agent_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label 'Tipo de propiedad', :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select :property_type_id, set_types.collect {|c| [c.name, c.id]}, {}, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:property_type_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label 'Categoria', :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select :property_category_id, set_categories.collect {|c| [c.name, c.id]}, {},  :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:property_category_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label 'Ciudad', :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select :city_id, set_cities.collect {|c| [c.name, c.id]}, {}, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:city_id) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                properties_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

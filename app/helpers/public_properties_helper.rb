@@ -1,0 +1,2 @@
+module PublicPropertiesHelper
+end

@@ -1,0 +1,29 @@
+<h1>Agentes </h1>
+<hr/>
+
+
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>Nombre </th>
+        <th> Email </th>
+        <th>Compañia </th>
+        <th colspan="3" ></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @agents.each do |a| %>
+          <tr>
+            <td><%= a.name %></td>
+            <td><%= a.email %></td>
+            <td><%= a.company %></td>
+
+          </tr>
+      <% end %>
+      </tbody>
+
+</table>
+
+
+<br>
+
