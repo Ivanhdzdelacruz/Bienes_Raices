@@ -5,6 +5,9 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.5.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+
+gem 'mysql2', '~> 0.4.3'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -23,6 +26,8 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+
+
 gem 'devise'
 gem 'bcrypt-ruby', '~> 3.0.0', :require => "bcrypt"
 gem 'twitter-bootstrap-rails', '~> 3.2', '>= 3.2.2'
@@ -30,6 +35,36 @@ gem 'ckeditor_rails', '~> 4.5', '>= 4.5.3'
 gem 'carrierwave', '~> 0.10.0'
 gem 'fancybox2-rails', '~> 0.2.8'
 
+#gem 'capistrano',  '~> 3.0.0'
+#gem 'capistrano-rails'
+
+gem	'capistrano',	'~>	3.1.0'
+gem	'capistrano-bundler',	'~>	1.1.2'
+gem	'capistrano-rails',	'~>	1.1.1'
+gem	'capistrano-rvm',	github:	"capistrano/rvm"
+
+#group :development do
+ # gem 'capistrano-rails',   '~> 1.1', require: false
+ # gem 'capistrano-bundler', '~> 1.1', require: false
+#end
+
+#group :development do
+ # gem	'capistrano',	'~>	3.1.0', require: false
+
+#  gem 'capistrano-rbenv', '~> 2.0', require: false
+ # gem 'capistrano-chruby', github: 'capistrano/chruby', require: false
+  #gem	'capistrano-rvm',	github:	"capistrano/rvm", require: false
+
+  #gem 'capistrano-rvm'
+#end
+
+#gem	'capistrano',	'~>	3.1.0', require: false
+
+#gem	'capistrano-bundler',	'~>	1.1.2', require: false
+#gem	'capistrano-rails',	'~>	1.1.1', require: false
+#gem	'capistrano-rvm',	github:	"capistrano/rvm", require: false
+
+#gem	'capistrano-rvm',	github:	"capistrano/rvm"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
